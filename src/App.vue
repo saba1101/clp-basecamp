@@ -4,7 +4,7 @@ import Home from "@/views/Home.vue";
 </script>
 
 <template>
-  <header>
+  <header class="z-50 sticky top-0">
     <Header />
   </header>
   <main>
@@ -14,10 +14,7 @@ import Home from "@/views/Home.vue";
 </template>
 
 <style scoped>
-/* main {
-  background: red;
-  max-width: 1280px;
-  margin: auto;
-  position: relative;
-} */
+main {
+  @apply desktop:w-1280 tablet:w-1024  overflow-hidden m-auto;
+}
 </style>

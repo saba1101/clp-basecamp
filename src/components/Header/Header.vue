@@ -101,18 +101,22 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .common-header {
-  @apply w-full h-28 flex justify-center gap-8 items-center bg-color-interface-white;
+  @apply w-full h-28  flex justify-center gap-8 items-center bg-color-interface-white;
 
   nav {
     .nav-more-items:hover .nav-dropdown-wrapper {
       @apply block;
     }
 
+    span {
+      @apply break-all;
+    }
+
     .nav-dropdown-wrapper {
       @apply absolute top-full hidden left-0;
 
       ul.nav-items-dropdown {
-        @apply w-48 max-h-80 bg-white rounded-lg mt-2 shadow-lg;
+        @apply w-48 max-h-80 bg-white rounded-lg mt-2 shadow-lg  overflow-auto;
         li {
           @apply py-4 px-5 transition-colors duration-200;
 

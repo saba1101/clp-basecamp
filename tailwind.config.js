@@ -4,10 +4,20 @@ export default {
   theme: {
     extend: {
       width: {
+        120: "120px",
+        288: "288px",
         304: "304px",
+        312: "312px",
+        952: "952px",
+        1280: "1280px",
+        1024: "1024px",
+        980: "980px",
       },
       height: {
         618: "618px",
+        188: "188px",
+        264: "264px",
+        408: "408px",
       },
       colors: {
         "color-primary": "#585EE3",
@@ -17,6 +27,11 @@ export default {
         "color-interface-black-grey": "#657178",
         "color-interface-light": "#F0F4F5",
         "color-interface-white": "#FFFFFF",
+      },
+      screens: {
+        mobile: "380px",
+        tablet: "1024px",
+        desktop: "1400px",
       },
     },
   },
