@@ -17,33 +17,24 @@ const setNavigationItems = () => {
   const visibleNavItems = NAVBAR_ITEMS.slice(0, visibleNavItemsIndex);
   const hiddenNavItems = NAVBAR_ITEMS.slice(visibleNavItemsIndex);
 
+  const createNavItem = (title, id) => ({ title, id, link: "" });
+
   if (!isMobile.value) {
+    const visibleNavItemsMapped = visibleNavItems.map(createNavItem);
+    const hiddenNavItemsMapped = hiddenNavItems.map(createNavItem);
+
     navigation.value = [
-      ...visibleNavItems.map((nav, ind) => ({
-        title: nav,
-        id: ind,
+      ...visibleNavItemsMapped,
+      {
+        title: "სხვა",
+        id: visibleNavItems.length + 1,
         link: "",
-      })),
-      ...[
-        {
-          title: "სხვა",
-          id: visibleNavItems.length + 1,
-          link: "",
-          isDropdown: true,
-          children: hiddenNavItems.map((nav, ind) => ({
-            title: nav,
-            id: ind,
-            link: "",
-          })),
-        },
-      ],
+        isDropdown: true,
+        children: hiddenNavItemsMapped,
+      },
     ];
   } else {
-    navigation.value = NAVBAR_ITEMS.map((nav, ind) => ({
-      title: nav,
-      id: ind,
-      link: "",
-    }));
+    navigation.value = NAVBAR_ITEMS.map(createNavItem);
   }
 };
 
