@@ -50,7 +50,11 @@ const setNavigationItems = () => {
 const setSocials = () => (socials.value = SOCIALS ?? []);
 
 const resizeListener = (event) => {
-  if (event.srcElement.innerWidth <= 1400) {
+  setIsMobile(event.srcElement.innerWidth);
+};
+
+const setIsMobile = (size) => {
+  if (size <= 1400) {
     isMobile.value = true;
   } else isMobile.value = false;
   setNavigationItems();
@@ -59,6 +63,7 @@ const resizeListener = (event) => {
 onMounted(() => {
   setNavigationItems();
   setSocials();
+  setIsMobile(window.innerWidth);
   window.addEventListener("resize", resizeListener);
 });
 
