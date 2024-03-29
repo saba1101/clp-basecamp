@@ -74,7 +74,6 @@ onUnmounted(() => {
 <template>
   <div class="common-header">
     <div
-      v-if="isMobile"
       class="header-menu-btn"
       v-on:click="() => (isNavVisible = !isNavVisible)"
     >
@@ -131,7 +130,7 @@ onUnmounted(() => {
     @apply mobile:mr-auto desktop:mr-0;
   }
   .header-menu-btn {
-    @apply w-12 h-12 rounded-full bg-color-primary-light grid place-items-center mobile:order-2 desktop:-order-none;
+    @apply w-12 h-12 rounded-full bg-color-primary-light mobile:grid desktop:hidden place-items-center mobile:order-2 desktop:-order-none;
   }
   nav {
     @apply mobile:order-2 desktop:-order-none mobile:w-screen desktop:w-auto;
