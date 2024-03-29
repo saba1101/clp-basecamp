@@ -11,7 +11,9 @@ const modules = [Navigation, Pagination, A11y];
 </script>
 
 <template>
-  <div class="w-952 bg-color-interface-white rounded-3xl p-4">
+  <div
+    class="desktop:w-952 mobile:w-full bg-color-interface-white rounded-3xl p-4"
+  >
     <swiper
       class="rounded-3xl"
       :modules="modules"

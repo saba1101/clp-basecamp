@@ -7,11 +7,17 @@ import FactsGrid from "@/views/KnownFacts/FactsGrid.vue";
 </script>
 
 <template>
-  <section class="w-full inline-flex mt-9 gap-8">
+  <section
+    class="w-full desktop:inline-flex desktop:flex-row mobile:flex mobile:flex-col mt-9 gap-8 relative"
+  >
     <div><NewsSlider /></div>
-    <div><News /></div>
+    <div class="desktop:relative desktop:top-0">
+      <News />
+    </div>
   </section>
-  <section class="w-full inline-flex mt-9 gap-8">
+  <section
+    class="w-full inline-flex desktop:flex-row mobile:flex mobile:flex-col-reverse mt-9 gap-8"
+  >
     <div>
       <FactsSlider />
       <div><FactsGrid /></div>

@@ -27,7 +27,7 @@ const swiperActionsHandler = {
 </script>
 
 <template>
-  <div class="p-4 bg-white rounded-3xl w-952">
+  <div class="p-4 bg-white rounded-3xl desktop:w-952 mobile:w-full">
     <div class="flex justify-between align-middle">
       <h3 class="text-color-interface-black-grey">ცნობილი ფაქტები</h3>
       <div class="flex justify-center align-middle gap-4">

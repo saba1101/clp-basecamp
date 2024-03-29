@@ -2,7 +2,9 @@
 import ImageMoon from "@/assets/images/moon.png";
 </script>
 <template>
-  <div class="w-304 h-618 bg-white rounded-3xl px-6 overflow-auto">
+  <div
+    class="desktop:w-304 mobile:w-full h-618 bg-white rounded-3xl px-6 overflow-auto"
+  >
     <div class="pt-6 pb-4">
       <h1 class="text-color-interface-black font-semibold text-lg leading-7">
         პოპულარული
@@ -14,8 +16,8 @@ import ImageMoon from "@/assets/images/moon.png";
         :key="i"
         class="flex justify-start align-center mt-4 border-b-2 border-dashed border-color-interface-light pb-4 cursor-pointer"
       >
-        <div class="w-96">
-          <img class="w-full" :src="ImageMoon" />
+        <div>
+          <img class="w-60" :src="ImageMoon" />
         </div>
         <p class="text-sm ml-4 text-color-interface-black-grey">
           დღეიდან ასაწონად განკუთვნილი პოლიეთილენის პარკები აიკრძალა

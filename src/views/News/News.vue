@@ -2,7 +2,9 @@
 import IconClock from "@/assets/svg/clock.svg";
 </script>
 <template>
-  <div class="w-304 h-618 bg-white rounded-lg overflow-auto px-6">
+  <div
+    class="desktop:w-304 mobile:w-full h-618 bg-white rounded-lg overflow-auto px-6"
+  >
     <div class="sticky top-0 bg-white pt-6 pb-4">
       <h1 class="text-color-interface-black font-semibold text-lg leading-7">
         ყველა სიახლე

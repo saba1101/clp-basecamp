@@ -13,6 +13,6 @@ import Home from "@/views/Home.vue";
 
 <style scoped>
 main {
-  @apply desktop:w-1280 tablet:w-1024 mobile:w-20 overflow-hidden m-auto;
+  @apply desktop:w-1280 mobile:w-auto desktop:m-auto mobile:m-0;
 }
 </style>

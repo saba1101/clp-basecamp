@@ -6,12 +6,12 @@ import Image2 from "@/assets/images/cardpic.png";
 <template>
   <div class="mt-16">
     <div
-      class="grid grid-cols-3 grid-rows-2 gap-8 align-middle place-items-center"
+      class="desktop:grid mobile:flex mobile:flex-col grid-cols-3 grid-rows-2 gap-8 align-middle place-items-center"
     >
       <div
-        class="col-start-2 col-end-3 row-start-1 row-end-3 w-304 h-408 grid-card-style"
+        class="col-start-2 col-end-3 row-start-1 row-end-3 desktop:w-304 mobile:w-fit desktop:h-408 mobile:h-auto grid-card-style"
       >
-        <div>
+        <div class="desktop:w-auto mobile:w-full">
           <img :src="Image2" />
         </div>
         <div class="tags flex gap-2 mt-4">
@@ -27,7 +27,7 @@ import Image2 from "@/assets/images/cardpic.png";
         </p>
       </div>
       <div
-        class="col-start-1 col-end-2 row-start-1 row-end-2 w-304 grid-card-style"
+        class="col-start-1 col-end-2 row-start-1 row-end-desktop:w-304 grid-card-style"
       >
         <div class="image-placeholder">
           <img :src="Image1" />
@@ -45,7 +45,7 @@ import Image2 from "@/assets/images/cardpic.png";
         </p>
       </div>
       <div
-        class="col-start-1 col-end-2 row-start-2 row-end-3 w-304 grid-card-style"
+        class="col-start-1 col-end-2 row-start-2 row-end-desktop:w-304 grid-card-style"
       >
         <div class="image-placeholder">
           <img :src="Image1" />
@@ -63,7 +63,7 @@ import Image2 from "@/assets/images/cardpic.png";
         </p>
       </div>
       <div
-        class="col-start-3 col-end-4 row-start-1 row-end-2 w-304 grid-card-style"
+        class="col-start-3 col-end-4 row-start-1 row-end-desktop:w-304 grid-card-style"
       >
         <div class="image-placeholder">
           <img :src="Image1" />
@@ -81,7 +81,7 @@ import Image2 from "@/assets/images/cardpic.png";
         </p>
       </div>
       <div
-        class="col-start-3 col-end-4 row-start-2 row-end-3 w-304 grid-card-style"
+        class="col-start-3 col-end-4 row-start-2 row-end-desktop:w-304 grid-card-style"
       >
         <div class="image-placeholder">
           <img :src="Image1" />
