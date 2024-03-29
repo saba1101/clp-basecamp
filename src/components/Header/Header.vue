@@ -93,7 +93,12 @@ onUnmounted(() => {
               </ul>
             </div>
           </div>
-          <span v-else> {{ nav?.title }} </span>
+          <span
+            class="whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[176px]"
+            v-else
+          >
+            {{ nav?.title }}
+          </span>
         </li>
       </ul>
     </nav>
