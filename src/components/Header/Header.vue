@@ -1,22 +1,23 @@
 <script setup>
 import Logo from "@/assets/svg/Logo.svg";
 import { NAVBAR_ITEMS, SOCIALS } from "@/data/common-data";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import Search from "@/components/Search/Search.vue";
 import IconArrowDown from "@/assets/svg/arrowDown.svg";
+import IconMenu from "@/assets/svg/menu.svg";
 
 const navigation = ref(null);
 const socials = ref(null);
 const searchValue = ref("");
-const isMobile = false;
+const isMobile = ref(false);
+const isNavVisible = ref(false);
 const visibleNavItemsIndex = 4;
-const isNavDropdownVisible = ref(false);
 
 const setNavigationItems = () => {
   const visibleNavItems = NAVBAR_ITEMS.slice(0, visibleNavItemsIndex);
   const hiddenNavItems = NAVBAR_ITEMS.slice(visibleNavItemsIndex);
 
-  if (!isMobile) {
+  if (!isMobile.value) {
     navigation.value = [
       ...visibleNavItems.map((nav, ind) => ({
         title: nav,
@@ -48,17 +49,36 @@ const setNavigationItems = () => {
 
 const setSocials = () => (socials.value = SOCIALS ?? []);
 
+const resizeListener = (event) => {
+  if (event.srcElement.innerWidth <= 1400) {
+    isMobile.value = true;
+  } else isMobile.value = false;
+  setNavigationItems();
+};
+
 onMounted(() => {
   setNavigationItems();
   setSocials();
+  window.addEventListener("resize", resizeListener);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", resizeListener);
 });
 </script>
 <template>
   <div class="common-header">
-    <div class="company-logo">
-      <img :src="Logo" alt="logo" />
+    <div
+      v-if="isMobile"
+      class="header-menu-btn"
+      v-on:click="() => (isNavVisible = !isNavVisible)"
+    >
+      <img :src="IconMenu" class="w-6" />
     </div>
-    <nav>
+    <div class="company-logo">
+      <img class="w-32" :src="Logo" alt="logo" />
+    </div>
+    <nav v-show="!isMobile || (isNavVisible && isMobile)">
       <ul>
         <li
           v-for="nav in navigation"
@@ -89,7 +109,7 @@ onMounted(() => {
         class="single-social-link"
       >
         <div class="socials-icon">
-          <img :src="s.icon" />
+          <img class="w-4 aspect-square" :src="s.icon" />
         </div>
       </div>
     </div>
@@ -101,9 +121,15 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .common-header {
-  @apply w-full h-28  flex justify-center gap-8 items-center bg-color-interface-white;
-
+  @apply z-50 desktop:sticky mobile:relative mobile:p-6 desktop:p-0 top-0 w-full desktop:h-28 mobile:h-auto  flex justify-center gap-8 items-center mobile:flex-wrap desktop:flex-nowrap bg-color-interface-white;
+  .company-logo {
+    @apply mobile:mr-auto desktop:mr-0;
+  }
+  .header-menu-btn {
+    @apply w-12 h-12 rounded-full bg-color-primary-light grid place-items-center mobile:order-2 desktop:-order-none;
+  }
   nav {
+    @apply mobile:order-2 desktop:-order-none mobile:w-screen desktop:w-auto;
     .nav-more-items:hover .nav-dropdown-wrapper {
       @apply block;
     }
@@ -131,7 +157,7 @@ onMounted(() => {
     }
 
     ul:not(.nav-items-dropdown) {
-      @apply flex justify-start items-center;
+      @apply flex justify-start desktop:items-center mobile:items-start mobile:flex-col desktop:flex-row;
 
       li {
         @apply relative transition duration-200 rounded-lg cursor-pointer py-4 px-5;

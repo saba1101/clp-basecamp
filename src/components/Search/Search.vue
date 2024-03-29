@@ -33,7 +33,7 @@ const inputValue = computed({
       value=""
     />
     <div class="search-icon">
-      <img :src="iconSearch" />
+      <img class="w-4" :src="iconSearch" />
     </div>
   </div>
 </template>

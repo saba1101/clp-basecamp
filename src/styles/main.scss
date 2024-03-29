@@ -12,3 +12,9 @@
 body {
   background: #f0f4f5;
 }
+
+@media screen and (max-width: 732px) {
+  html {
+    font-size: 1.737vw;
+  }
+}

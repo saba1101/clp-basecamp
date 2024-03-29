@@ -29,7 +29,7 @@ export default {
         "color-interface-white": "#FFFFFF",
       },
       screens: {
-        mobile: "380px",
+        mobile: "0px",
         tablet: "1024px",
         desktop: "1400px",
       },
