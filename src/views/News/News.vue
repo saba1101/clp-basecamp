@@ -3,7 +3,7 @@ import IconClock from "@/assets/svg/clock.svg";
 </script>
 <template>
   <div
-    class="desktop:w-304 mobile:w-full h-618 bg-white rounded-lg overflow-auto px-6"
+    class="desktop:w-304 mobile:w-full desktop:h-618 mobile:h-312 bg-white rounded-lg overflow-auto px-6"
   >
     <div class="sticky top-0 bg-white pt-6 pb-4">
       <h1 class="text-color-interface-black font-semibold text-lg leading-7">
@@ -12,7 +12,7 @@ import IconClock from "@/assets/svg/clock.svg";
     </div>
     <div>
       <div
-        v-for="i in 25"
+        v-for="i in 10"
         :key="i"
         class="mt-4 border-b-2 border-dashed border-color-interface-light pb-4 cursor-pointer"
       >
