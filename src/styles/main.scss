@@ -18,3 +18,15 @@ body {
     font-size: 1.737vw;
   }
 }
+
+@media screen and (max-width: 563px) {
+  html {
+    font-size: 2.337vw;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  html {
+    font-size: 2.537vw;
+  }
+}
