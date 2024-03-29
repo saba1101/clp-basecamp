@@ -11,7 +11,7 @@ import Image2 from "@/assets/images/cardpic.png";
       <div
         class="col-start-2 col-end-3 row-start-1 row-end-3 desktop:w-304 mobile:w-fit desktop:h-408 mobile:h-auto grid-card-style"
       >
-        <div class="desktop:w-auto mobile:w-full">
+        <div class="desktop:w-auto mobile:w-auto">
           <img :src="Image2" />
         </div>
         <div class="tags flex gap-2 mt-4">
@@ -104,7 +104,7 @@ import Image2 from "@/assets/images/cardpic.png";
 
 <style lang="scss" scoped>
 .grid-card-style {
-  @apply bg-color-interface-white rounded-2xl p-2;
+  @apply bg-color-interface-white rounded-2xl p-2 desktop:block mobile:grid place-items-center;
 }
 .tags {
   div {
